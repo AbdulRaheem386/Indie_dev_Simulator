@@ -13515,7 +13515,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.00013349955, g: 0.0053936094, b: 0.009433985, a: 1}
+  m_Color: {r: 0.047169805, g: 0.045167312, b: 0.045167312, a: 1}
   m_Intensity: 14.46
   m_Range: 10
   m_SpotAngle: 30
@@ -19415,7 +19415,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: baa7e2f59f682fe4f8a98901ea97b955, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -19857,7 +19857,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 05dee915db2d4ed4db3f4c00e66de70d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.03
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0

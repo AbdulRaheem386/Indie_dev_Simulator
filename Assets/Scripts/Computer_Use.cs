@@ -146,14 +146,15 @@ public class Computer_Use : MonoBehaviour
 
     public void ExitComputer()
     {
-        StartCoroutine(ReturnCamera());
-
-        firstPersonController.enabled = true;
-        starterAssetsInputs.enabled = true;
+        firstPersonController.enabled = false;
+        starterAssetsInputs.enabled = false;
 
         if (exitButton != null)
             exitButton.SetActive(false);
+
         mainCanva.SetActive(true);
+
+        StartCoroutine(ReturnCamera());
     }
 
 
@@ -181,6 +182,9 @@ public class Computer_Use : MonoBehaviour
         PlayerCamera.rotation = originalCameraRotation;
 
         Debug.Log("Camera Returned");
+
+        firstPersonController.enabled = true;
+        starterAssetsInputs.enabled = true;
     }
 
     public void CloseEmail()
