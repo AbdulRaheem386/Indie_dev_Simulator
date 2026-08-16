@@ -252,23 +252,29 @@ public class Computer_Use : MonoBehaviour
     public void GameNameSave(string name)
     {
         gamename = name;
-
-        Debug.Log("Game name " + gamename);
+        PlayerPrefs.SetString("SaveGameName", gamename);
+        PlayerPrefs.Save();
     }
 
-    public void CustomGAmeNameSave(string customname)
+    public void CustomGAmeNameSave()
     {
-        customgamename = customname;
+        customgamename = gamename;
+        PlayerPrefs.SetString("CustomGameName", customgamename);
+        PlayerPrefs.Save();
     }
 
     public void GameGenreSave(string genre)
     {
         gamegenre = genre;
+        PlayerPrefs.SetString("SaveGameGenere", gamegenre);
+        PlayerPrefs.Save();
     }
 
     public void GameideaSave(string idea)
     {
         gameidea = idea;
+        PlayerPrefs.SetString("SaveGameIdea", gameidea);
+        PlayerPrefs.Save();
     }
 
     public void backbutton()
@@ -522,5 +528,12 @@ public class Computer_Use : MonoBehaviour
             Glow2.SetActive(true);
 
         Debug.Log("Glow " + id);
+
+        //Test
+        PlayerPrefs.SetInt("SelectedId", id);
+        PlayerPrefs.Save();
+
     }
+
+    
 }
