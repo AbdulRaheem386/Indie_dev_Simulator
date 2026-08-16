@@ -5,6 +5,7 @@ using TMPro;
 
 public class Game_Review : MonoBehaviour
 {
+    public Bank_Manager bankmanager;
     public GameObject Review_panel;
 
     public TextMeshProUGUI ReviewText;
@@ -71,6 +72,7 @@ public class Game_Review : MonoBehaviour
         else
         {
             ShowbadReviews();
+            bankmanager.Addmoney(100);
         }
           
     }
