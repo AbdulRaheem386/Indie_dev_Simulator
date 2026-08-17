@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class Game_Review : MonoBehaviour
 {
@@ -68,13 +69,145 @@ public class Game_Review : MonoBehaviour
        if(slectedid == 1 || slectedid == 2)
         {
             ShowgoodReviews();
+            bankmanager.Addmoney(10000);
         }
         else
         {
-            ShowbadReviews();
-            bankmanager.Addmoney(100);
+            string genre = PlayerPrefs.GetString("SaveGameGenere", " ").ToLower();
+            string idea = PlayerPrefs.GetString("SaveGameIdea", " ").ToLower();
+
+            if(IsIdeaMatchingGenere(genre , idea))
+            {
+                ShowgoodReviews();
+                bankmanager.Addmoney(10000);
+            }
+            else
+            {
+                ShowbadReviews();
+            }
+               
         }
           
+    }
+
+    bool IsIdeaMatchingGenere(string genre, string idea)
+    {
+        // ACTION / SHOOTER
+        if (genre.Contains("action") || genre.Contains("shooter"))
+        {
+            return idea.Contains("fight") ||
+                   idea.Contains("war") ||
+                   idea.Contains("soldier") ||
+                   idea.Contains("gun") ||
+                   idea.Contains("enemy") ||
+                   idea.Contains("mission") ||
+                   idea.Contains("battle") ||
+                   idea.Contains("combat") ||
+                   idea.Contains("shoot") ||
+                   idea.Contains("weapon");
+        }
+
+        // RPG
+        if (genre.Contains("rpg"))
+        {
+            return idea.Contains("quest") ||
+                   idea.Contains("adventure") ||
+                   idea.Contains("character") ||
+                   idea.Contains("kingdom") ||
+                   idea.Contains("magic") ||
+                   idea.Contains("hero") ||
+                   idea.Contains("level") ||
+                   idea.Contains("dungeon") ||
+                   idea.Contains("explore");
+        }
+
+        // SIMULATION
+        if (genre.Contains("simulation"))
+        {
+            return idea.Contains("build") ||
+                   idea.Contains("manage") ||
+                   idea.Contains("city") ||
+                   idea.Contains("farm") ||
+                   idea.Contains("business") ||
+                   idea.Contains("life") ||
+                   idea.Contains("restaurant") ||
+                   idea.Contains("hospital") ||
+                   idea.Contains("school");
+        }
+
+        // STRATEGY / TYCOON
+        if (genre.Contains("strategy") || genre.Contains("tycoon"))
+        {
+            return idea.Contains("strategy") ||
+                   idea.Contains("manage") ||
+                   idea.Contains("build") ||
+                   idea.Contains("empire") ||
+                   idea.Contains("army") ||
+                   idea.Contains("business") ||
+                   idea.Contains("city") ||
+                   idea.Contains("resources") ||
+                   idea.Contains("money");
+        }
+
+        // PUZZLE / CASUAL
+        if (genre.Contains("puzzle") || genre.Contains("casual"))
+        {
+            return idea.Contains("puzzle") ||
+                   idea.Contains("match") ||
+                   idea.Contains("solve") ||
+                   idea.Contains("block") ||
+                   idea.Contains("tile") ||
+                   idea.Contains("brain") ||
+                   idea.Contains("memory") ||
+                   idea.Contains("quiz") ||
+                   idea.Contains("challenge");
+        }
+
+        // HORROR / SURVIVAL
+        if (genre.Contains("horror") || genre.Contains("survival"))
+        {
+            return idea.Contains("ghost") ||
+                   idea.Contains("monster") ||
+                   idea.Contains("haunted") ||
+                   idea.Contains("zombie") ||
+                   idea.Contains("scary") ||
+                   idea.Contains("survive") ||
+                   idea.Contains("dark") ||
+                   idea.Contains("dead") ||
+                   idea.Contains("night") ||
+                   idea.Contains("island");
+        }
+
+        // RACING / SPORTS
+        if (genre.Contains("racing") || genre.Contains("sports"))
+        {
+            return idea.Contains("car") ||
+                   idea.Contains("race") ||
+                   idea.Contains("racing") ||
+                   idea.Contains("driver") ||
+                   idea.Contains("track") ||
+                   idea.Contains("football") ||
+                   idea.Contains("soccer") ||
+                   idea.Contains("basketball") ||
+                   idea.Contains("tennis") ||
+                   idea.Contains("cricket");
+        }
+
+        // ENDLESS RUNNER / ARCADE
+        if (genre.Contains("endlessrunner") || genre.Contains("arcade"))
+        {
+            return idea.Contains("run") ||
+                   idea.Contains("runner") ||
+                   idea.Contains("jump") ||
+                   idea.Contains("obstacle") ||
+                   idea.Contains("endless") ||
+                   idea.Contains("collect") ||
+                   idea.Contains("score") ||
+                   idea.Contains("coin") ||
+                   idea.Contains("survive");
+        }
+
+        return false;
     }
 
     public void ShowgoodReviews()
