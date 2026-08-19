@@ -8,6 +8,7 @@ public class Game_Review : MonoBehaviour
 {
     public Bank_Manager bankmanager;
     public GameObject Review_panel;
+    
 
     public TextMeshProUGUI ReviewText;
     public TextMeshProUGUI ReviewText1;
@@ -15,6 +16,7 @@ public class Game_Review : MonoBehaviour
     public TextMeshProUGUI RatingText;
     public TextMeshProUGUI RatingText1;
     public TextMeshProUGUI RatingText2;
+    
 
     // GOOD REVIEWS
     string[] goodRatings =
@@ -263,5 +265,7 @@ public class Game_Review : MonoBehaviour
         ReviewText2.text = badReviews[index3];
         RatingText2.text = badRatings[index3];
     }
+
+    
 }
 
