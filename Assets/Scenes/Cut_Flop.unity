@@ -1572,6 +1572,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &404723226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a17ecc17c3bd90498d0183496fbbd7a, type: 3}
+  m_PrefabInstance: {fileID: 1763552556}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &420433531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4913,7 +4918,7 @@ GameObject:
   - component: {fileID: 1294458650}
   - component: {fileID: 1294458649}
   m_Layer: 0
-  m_Name: Cut_Scene_2
+  m_Name: Cut_Scene_Flop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4928,20 +4933,24 @@ PlayableDirector:
   m_GameObject: {fileID: 1294458648}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 9973c902d74a6c3489de13266a5b61c5, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 9db018d9e77ad1a439e8307a129f37fb, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: 6234795430080303182, guid: 9973c902d74a6c3489de13266a5b61c5, type: 2}
+  - key: {fileID: 6234795430080303182, guid: 9db018d9e77ad1a439e8307a129f37fb, type: 2}
     value: {fileID: 2127665172}
-  - key: {fileID: 7124234546386850507, guid: 9973c902d74a6c3489de13266a5b61c5, type: 2}
+  - key: {fileID: 7124234546386850507, guid: 9db018d9e77ad1a439e8307a129f37fb, type: 2}
     value: {fileID: 231095706}
-  - key: {fileID: -6198828047890560805, guid: 9973c902d74a6c3489de13266a5b61c5, type: 2}
-    value: {fileID: 1416639560}
-  - key: {fileID: -7318264869671023364, guid: 9973c902d74a6c3489de13266a5b61c5, type: 2}
-    value: {fileID: 1263351051}
+  - key: {fileID: 8772974730241350456, guid: 9db018d9e77ad1a439e8307a129f37fb, type: 2}
+    value: {fileID: 404723226}
+  - key: {fileID: -4535593728129832744, guid: 9db018d9e77ad1a439e8307a129f37fb, type: 2}
+    value: {fileID: 2056001141}
+  - key: {fileID: 5713079447504497220, guid: 9db018d9e77ad1a439e8307a129f37fb, type: 2}
+    value: {fileID: 1599094862}
+  - key: {fileID: 7462128636482561375, guid: 9db018d9e77ad1a439e8307a129f37fb, type: 2}
+    value: {fileID: 2127665171}
   m_ExposedReferences:
     m_References:
     - 34661ca1036a64c48807d82b51303d8e: {fileID: 0}
@@ -5412,7 +5421,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 83f19866dfaf65f4f965076917feca89, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.14
   m_Pitch: 1
@@ -7667,15 +7676,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cup_hand
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 1a17ecc17c3bd90498d0183496fbbd7a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a17ecc17c3bd90498d0183496fbbd7a, type: 3}
+--- !u!1 &2056001141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a17ecc17c3bd90498d0183496fbbd7a, type: 3}
+  m_PrefabInstance: {fileID: 2056001140}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2056001142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1a17ecc17c3bd90498d0183496fbbd7a, type: 3}
