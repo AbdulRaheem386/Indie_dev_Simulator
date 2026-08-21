@@ -12414,6 +12414,7 @@ MonoBehaviour:
   BorderButton2: {fileID: 273715734}
   BorderButton3: {fileID: 500707706}
   custombackbutton: {fileID: 1303917853}
+  CreategameButton: {fileID: 1397899254}
   Glow1: {fileID: 4093927}
   Glow2: {fileID: 1694211681}
   glowselected: 0
@@ -13322,7 +13323,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1320009973}
         m_TargetAssemblyTypeName: Computer_Use, Assembly-CSharp
-        m_MethodName: custom_Panel
+        m_MethodName: Scene_Change
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

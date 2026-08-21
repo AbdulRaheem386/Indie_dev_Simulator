@@ -2,6 +2,7 @@ using StarterAssets;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Computer_Use : MonoBehaviour
 {
@@ -68,6 +69,7 @@ public class Computer_Use : MonoBehaviour
     public GameObject BorderButton2;
     public GameObject BorderButton3;
     public GameObject custombackbutton;
+    public GameObject CreategameButton;
 
     [Header("Glow Borders")]
     public GameObject Glow1;
@@ -293,6 +295,7 @@ public class Computer_Use : MonoBehaviour
         BorderButton3.SetActive(false);
         Glow1.SetActive(false);
         Glow2.SetActive(false);
+        CreategameButton.SetActive(false);
         Unity.SetActive(true);
         CloseUnityButton.SetActive(true);
         GameName.SetActive(true);
@@ -324,6 +327,7 @@ public class Computer_Use : MonoBehaviour
         BorderButton1.SetActive(true);
         BorderButton2.SetActive(true);
         BorderButton3.SetActive(true);
+        CreategameButton.SetActive(true);
         currentpanel = actionPanel;
     }
 
@@ -346,6 +350,7 @@ public class Computer_Use : MonoBehaviour
         BorderButton1.SetActive(true);
         BorderButton2.SetActive(true);
         BorderButton3.SetActive(true);
+        CreategameButton.SetActive(true);
         currentpanel = RPGPanel;
     }
     public void Simulationpanel()
@@ -367,6 +372,7 @@ public class Computer_Use : MonoBehaviour
         BorderButton1.SetActive(true);
         BorderButton2.SetActive(true);
         BorderButton3.SetActive(true);
+        CreategameButton.SetActive(true);
         currentpanel = simulationPanel;
     }
     public void Strategypanel()
@@ -388,6 +394,7 @@ public class Computer_Use : MonoBehaviour
         BorderButton1.SetActive(true);
         BorderButton2.SetActive(true);
         BorderButton3.SetActive(true);
+        CreategameButton.SetActive(true);
         currentpanel = strategyPanel;
     }
     public void Puzzlepanel()
@@ -409,6 +416,7 @@ public class Computer_Use : MonoBehaviour
         BorderButton1.SetActive(true);
         BorderButton2.SetActive(true);
         BorderButton3.SetActive(true);
+        CreategameButton.SetActive(true);
         currentpanel = puzzlePanel;
     }
     public void Horrorpanel()
@@ -430,6 +438,7 @@ public class Computer_Use : MonoBehaviour
         BorderButton1.SetActive(true);
         BorderButton2.SetActive(true);
         BorderButton3.SetActive(true);
+        CreategameButton.SetActive(true);
         currentpanel = horrorPanel;
     }
     public void Racingpanel()
@@ -451,6 +460,7 @@ public class Computer_Use : MonoBehaviour
         BorderButton1.SetActive(true);
         BorderButton2.SetActive(true);
         BorderButton3.SetActive(true);
+        CreategameButton.SetActive(true);
         currentpanel = racingPanel;
     }
     public void Endlesspanel()
@@ -472,6 +482,7 @@ public class Computer_Use : MonoBehaviour
         BorderButton1.SetActive(true);
         BorderButton2.SetActive(true);
         BorderButton3.SetActive(true);
+        CreategameButton.SetActive(true);
         currentpanel = endlessPanel;
     }
 
@@ -492,8 +503,7 @@ public class Computer_Use : MonoBehaviour
         CustomGameName.SetActive(true);
         Gamegenere.SetActive(true);
         Gameidea.SetActive(true);
-        
-
+        CreategameButton.SetActive(true);
     }
 
     public void customback_button()
@@ -513,6 +523,7 @@ public class Computer_Use : MonoBehaviour
         BorderButton2.SetActive(true);
         BorderButton3.SetActive(true);
         
+
     }
 
     public void glowselect(int id)
@@ -535,5 +546,21 @@ public class Computer_Use : MonoBehaviour
 
     }
 
-    
+    public void Scene_Change()
+    {
+
+        StartCoroutine(LoadLevel());
+    }
+
+    IEnumerator LoadLevel()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Test");
+
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
+    }
+
+
 }
