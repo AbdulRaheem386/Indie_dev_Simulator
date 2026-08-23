@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game_Review : MonoBehaviour
 {
+    public Scenes_Manager scene_manage;
+    private bool isGoodreviews = false;
+
     public Bank_Manager bankmanager;
     public GameObject Review_panel;
     
+
 
     public TextMeshProUGUI ReviewText;
     public TextMeshProUGUI ReviewText1;
@@ -72,6 +77,7 @@ public class Game_Review : MonoBehaviour
         {
             ShowgoodReviews();
             bankmanager.Addmoney(10000);
+            isGoodreviews = true;
         }
         else
         {
@@ -82,10 +88,12 @@ public class Game_Review : MonoBehaviour
             {
                 ShowgoodReviews();
                 bankmanager.Addmoney(10000);
+                isGoodreviews = true;
             }
             else
             {
                 ShowbadReviews();
+                isGoodreviews = false;
             }
                
         }
@@ -266,6 +274,17 @@ public class Game_Review : MonoBehaviour
         RatingText2.text = badRatings[index3];
     }
 
+   public void CutScene_manage()
+    {
+        if (isGoodreviews)
+        {
+            scene_manage.Cut2_CutSuccess();
+        }
+        else
+        {
+            scene_manage.Cut2_Cutfllop();
+        }
+    }
     
 }
 

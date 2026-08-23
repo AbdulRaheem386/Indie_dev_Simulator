@@ -70,6 +70,7 @@ public class Computer_Use : MonoBehaviour
     public GameObject BorderButton3;
     public GameObject custombackbutton;
     public GameObject CreategameButton;
+    public GameObject CreategameCustom;
 
     [Header("Glow Borders")]
     public GameObject Glow1;
@@ -488,6 +489,7 @@ public class Computer_Use : MonoBehaviour
 
     public void custom_Panel()
     {
+        
         Glow1.SetActive(false);
         Glow2.SetActive(false);
         BorderButton1.SetActive(false);
@@ -503,7 +505,9 @@ public class Computer_Use : MonoBehaviour
         CustomGameName.SetActive(true);
         Gamegenere.SetActive(true);
         Gameidea.SetActive(true);
-        CreategameButton.SetActive(true);
+        CreategameCustom.SetActive(true);
+        
+       
     }
 
     public void customback_button()
@@ -513,6 +517,7 @@ public class Computer_Use : MonoBehaviour
         CustomGameName.SetActive(false);
         Gamegenere.SetActive(false);
         Gameidea.SetActive(false);
+        CreategameCustom.SetActive(false);
 
         if (currentpanel != null)
         {
@@ -546,21 +551,7 @@ public class Computer_Use : MonoBehaviour
 
     }
 
-    public void Scene_Change()
-    {
-
-        StartCoroutine(LoadLevel());
-    }
-
-    IEnumerator LoadLevel()
-    {
-        AsyncOperation operation = SceneManager.LoadSceneAsync("Test");
-
-        while (!operation.isDone)
-        {
-            yield return null;
-        }
-    }
+    
 
 
 }

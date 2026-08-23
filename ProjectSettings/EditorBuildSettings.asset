@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test.unity
     guid: 354ea3e044d966f46b6aafb268db8dc9
+  - enabled: 1
+    path: Assets/Scenes/Cut_Success.unity
+    guid: 7a08e71cac9fafa429fa3e39e9a9f262
+  - enabled: 1
+    path: Assets/Scenes/Cut_Flop.unity
+    guid: 9ae2a2c5a129dac43b304c236da1986e
   m_configObjects: {}

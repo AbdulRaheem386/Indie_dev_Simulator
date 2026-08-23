@@ -22,4 +22,55 @@ public class Scenes_Manager : MonoBehaviour
             yield return null;
         }
     }
+
+    public void Level1_Cut2()
+    {
+        LoadingPanel.SetActive(true);
+
+        StartCoroutine(LoadCut2());
+    }
+
+    IEnumerator LoadCut2()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Test");
+
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
+    }
+
+    public void Cut2_CutSuccess()
+    {
+        LoadingPanel.SetActive(true);
+
+        StartCoroutine(LoadCutSuccess());
+    }
+
+    IEnumerator LoadCutSuccess()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Cut_Success");
+
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
+    }
+
+    public void Cut2_Cutfllop()
+    {
+        LoadingPanel.SetActive(true);
+
+        StartCoroutine(LoadCutflop());
+    }
+
+    IEnumerator LoadCutflop()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Cut_Flop");
+
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
+    }
 }
