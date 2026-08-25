@@ -489,6 +489,8 @@ public class Computer_Use : MonoBehaviour
 
     public void custom_Panel()
     {
+        PlayerPrefs.SetInt("SelectedId", 3);
+        PlayerPrefs.Save();
         
         Glow1.SetActive(false);
         Glow2.SetActive(false);
