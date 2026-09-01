@@ -9,6 +9,8 @@ public class StartLoading : MonoBehaviour
     public Slider loadingBar;
     public TextMeshProUGUI loadingText;
 
+    public float loadingSpeed = 0.2f;
+
     void Start()
     {
         StartCoroutine(LoadGame());
@@ -16,35 +18,47 @@ public class StartLoading : MonoBehaviour
 
     IEnumerator LoadGame()
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync("CutScene_1");
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Main_Menu");
 
         operation.allowSceneActivation = false;
 
-        while (operation.progress < 0.9f)
+        float displayedProgress = 0f;
+
+        while (displayedProgress < 1f)
         {
-            float progress = operation.progress / 0.9f;
+            float targetProgress = Mathf.Clamp01(operation.progress / 0.9f);
+
+            displayedProgress = Mathf.MoveTowards(
+                displayedProgress,
+                targetProgress,
+                loadingSpeed * Time.deltaTime
+            );
 
             if (loadingBar != null)
-                loadingBar.value = progress;
+                loadingBar.value = displayedProgress;
 
             if (loadingText != null)
-                loadingText.text = "Loading " +
-                    (progress * 100f).ToString("0") + "%";
+                loadingText.text = (displayedProgress * 100f).ToString("0") + "%";
 
             yield return null;
+
+            // Scene completely loaded
+            if (operation.progress >= 0.9f && displayedProgress >= 1f)
+            {
+                break;
+            }
         }
 
-        // Loading complete
+        // 100% show karo
         if (loadingBar != null)
             loadingBar.value = 1f;
 
         if (loadingText != null)
-            loadingText.text = "Loading 100%";
+            loadingText.text = "100%";
 
-        // 100% hone ke baad thora wait
+        // Animation ko thori der aur chalne do
         yield return new WaitForSeconds(10f);
 
-        // Ab next scene open
         operation.allowSceneActivation = true;
     }
 }

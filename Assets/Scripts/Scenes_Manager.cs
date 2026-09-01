@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class Scenes_Manager : MonoBehaviour
 {
     public GameObject LoadingPanel;
+    public GameObject Playbutton;
+    public GameObject Quitbutton;
 
     public void Scene_Change()
     {
@@ -72,5 +74,27 @@ public class Scenes_Manager : MonoBehaviour
         {
             yield return null;
         }
+    }
+
+    public void Play_button()
+    {
+        LoadingPanel.SetActive(true);
+
+        StartCoroutine(LoadCutScene1());
+    }
+
+    IEnumerator LoadCutScene1()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync("CutScene_1");
+
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
+    }
+
+    public void Quit_Game()
+    {
+        Application.Quit();
     }
 }
