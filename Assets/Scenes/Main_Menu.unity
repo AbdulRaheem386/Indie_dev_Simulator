@@ -290,7 +290,7 @@ RectTransform:
   m_GameObject: {fileID: 566421609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8.005045, y: 6.0041428, z: 1}
+  m_LocalScale: {x: 8.005045, y: 3.959294, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1841290417}
@@ -401,8 +401,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1737852946}
-        m_TargetAssemblyTypeName: Scenes_Manager, Assembly-CSharp
+      - m_Target: {fileID: 296312545}
+        m_TargetAssemblyTypeName: Main_Menu, Assembly-CSharp
         m_MethodName: Quit_Game
         m_Mode: 1
         m_Arguments:
@@ -657,8 +657,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1737852946}
-        m_TargetAssemblyTypeName: Scenes_Manager, Assembly-CSharp
+      - m_Target: {fileID: 296312545}
+        m_TargetAssemblyTypeName: Main_Menu, Assembly-CSharp
         m_MethodName: Play_button
         m_Mode: 1
         m_Arguments:
@@ -1411,7 +1411,7 @@ RectTransform:
   m_GameObject: {fileID: 2127007964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0502, y: 1, z: 1}
+  m_LocalScale: {x: 1.0896876, y: 1.1381, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 684564095}
